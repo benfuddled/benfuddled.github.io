@@ -59,12 +59,24 @@
         }
 
         a {
-            color: #0069af;
+            color: #00607B;
         }
 
         a:visited {
-            color: #8b0038;
+            color: #B60000;
         }
+
+        hr {
+            position: relative;
+            border: none;
+            border-top: 2px solid #d2d2d2;
+            height: 10px;
+        }
+
+        hr.solid {
+            border-top-width: 4px;
+        }
+
 
         @media (prefers-color-scheme: dark) {
             body {
@@ -86,8 +98,11 @@
             }
 
             a:visited {
-                color: #E58CF5;
                 color: #f58c9a;
+            }
+
+            hr {
+                border-color: #454545;
             }
         }
     </style>
@@ -97,10 +112,12 @@
     <header>
         <h1>Benjamin Richardson</h1>
     </header>
-    <hr>
-    <h2>I'm a front-end web developer by day, and a general open-source tinkerer by night. Here are some things I've made.</h2>
+    <hr class="solid">
+    <h2>I'm a front-end web developer by day, and a general open-source tinkerer by night. Here are some things I've
+        made.</h2>
     <h3>🍞 Sheetloaf</h3>
-    <p>Fresh-made stylesheets for the whole family. Compile sass files to CSS and transform using postcss, all in one command.</p>
+    <p>Fresh-made stylesheets for the whole family. Compile sass files to CSS and transform using postcss, all in one
+        command.</p>
     <p><a href="https://github.com/benfuddled/sheetloaf/">GitHub Repo</a></p>
     <hr>
     <h3>🦊 Contrast++</h3>
@@ -113,7 +130,8 @@
         <h2>Find Me On...</h2>
         <ul>
             <li><a href="https://github.com/benfuddled/">GitHub - @benfuddled</a></li>
-            <li><a href="https://fosstodon.org/@benfuddled" rel="me noopener">Mastodon - @benfuddled@fosstodon.org</a></li>
+            <li><a href="https://fosstodon.org/@benfuddled" rel="me noopener">Mastodon - @benfuddled@fosstodon.org</a>
+            </li>
             <li><a href="https://letterboxd.com/benfuddled/">Letterboxd - @benfuddled</a></li>
         </ul>
     </footer>
