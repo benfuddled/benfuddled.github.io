@@ -1,49 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>benfuddled | Benjamin Richardson</title>
 
     <style>
         @font-face {
-            font-family: 'Geist';
-            src: url('/fonts/Geist-Regular.woff2') format('woff2');
+            font-family: "Geist";
+            src: url("/fonts/Geist-Regular.woff2") format("woff2");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Geist';
-            src: url('/fonts/Geist-Light.woff2') format('woff2');
+            font-family: "Geist";
+            src: url("/fonts/Geist-Light.woff2") format("woff2");
             font-weight: 300;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Geist';
-            src: url('/fonts/Geist-Bold.woff2') format('woff2');
+            font-family: "Geist";
+            src: url("/fonts/Geist-Bold.woff2") format("woff2");
             font-weight: 700;
             font-style: normal;
             font-display: swap;
         }
 
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #fff6f4;
+            background: linear-gradient(45deg, #fffcef, #fff5f6);
+        }
+
         body {
-            margin: 40px auto;
-            max-width: 800px;
-            padding: 0 20px;
+            margin: 0;
+            padding: 0;
             font-size: 18px;
             line-height: 1.65;
-            font-family: 'Geist', sans-serif;
-            color: #363636;
+            letter-spacing: 0.015em;
+            font-family: "Geist", sans-serif;
+        }
+
+        .body-inner {
+            margin: 0 auto;
+            max-width: 860px;
+            padding: 10px 20px;
+        }
+
+        header {
+            color: #3D001C;
+            overflow: hidden;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 48px 40px;
+        }
+
+        p.intro {
+            margin: 0;
+            font-size: 1.4em;
+            line-height: 1.35;
+        }
+
+        p {
+            font-weight: 300;
         }
 
         h1 {
-            color: #000000;
+            font-size: 2.2em;
             line-height: 1.2;
+            margin: 0 0 0.4em;
         }
 
         h2,
@@ -52,7 +87,6 @@
         h5,
         h6 {
             line-height: 1.2;
-            color: #0C0C0C;
         }
 
         h3 {
@@ -60,39 +94,44 @@
         }
 
         a {
-            color: #00607B;
+            font-weight: 400;
+            color: #DC004D;
+            letter-spacing: 0em;
         }
 
         a:visited {
-            color: #B60000;
-        }
-
-        hr {
-            position: relative;
-            border: none;
-            border-top: 2px solid #eaeaea;
-            height: 10px;
-        }
-
-        hr.solid {
-            border-top-width: 4px;
-            margin-top: 2em;
-            margin-bottom: 2em;
-        }
-
-        p.intro {
-            margin: 0 0 1.5em;
-            font-size: 1.8em;
-            line-height: 1.35;
-            font-weight: 300;
-            color: #6c6c6c;
+            color: #84002E;
         }
 
         footer {
             margin-top: 2em;
-            border-top: 4px solid #eaeaea;
+            margin-bottom: 2em;
+            border-top: 2px solid rgb(54, 0, 9, 0.2);
+            color: #3D001C;
+            text-align: center;
         }
 
+        footer ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        .holder {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 30px;
+            border: 1px solid rgba(230, 225, 255, 0.75);
+            border-radius: 10px;
+            margin-bottom: 16px;
+        }
 
         @media (prefers-color-scheme: dark) {
             body {
@@ -104,6 +143,11 @@
                 color: #ffffff;
             }
 
+            .holder {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(230, 225, 255, 0.15);
+            }
+
             h2,
             h3,
             h4,
@@ -113,11 +157,11 @@
             }
 
             a {
-                color: #6abafc;
+                color: #ff4f8c;
             }
 
             a:visited {
-                color: #f58c9a;
+                color: #dda0e3;
             }
 
             hr {
@@ -125,11 +169,23 @@
             }
 
             p.intro {
-                color: #A7A7A7;
+                color: #b5b5b5;
             }
 
             footer {
                 border-top-color: #3b3b3b;
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                padding-top: 30px;
+                padding-bottom: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p.intro {
+                font-size: 1.25em;
             }
         }
     </style>
@@ -138,29 +194,49 @@
 <body>
     <header>
         <h1>Benjamin Richardson</h1>
+        <p class="intro">
+            I'm a front-end web developer by day, and a general open-source
+            tinkerer by night. Here are some things I've made.
+        </p>
     </header>
-    <p class="intro">I'm a front-end web developer by day, and a general open-source tinkerer by night. Here are some things I've
-        made.</p>
-    <h2>🍞 Sheetloaf</h2>
-    <p>Fresh-made stylesheets for the whole family. Compile sass files to CSS and transform using postcss, all in one
-        command.</p>
-    <p><a href="https://github.com/benfuddled/sheetloaf/">GitHub Repo</a></p>
-    <hr>
-    <h2>🦊 Contrast++</h2>
-    <p>A theme that re-balances the contrast of Firefox Proton's UI that debuted in v89.</p>
-    <p><a href="https://addons.mozilla.org/en-US/firefox/addon/contrastplusplus/">Get Via Firefox Add-ons</a></p>
-    <hr>
-    <h2>✨ More To Come?!</h2>
-    <p>Life is busy.</p>
-    <footer>
-        <h2>Find Me On...</h2>
-        <ul>
-            <li><a href="https://github.com/benfuddled/">GitHub</a></li>
-            <li><a href="https://fosstodon.org/@benfuddled" rel="me noopener">Mastodon</a>
-            </li>
-            <li><a href="https://letterboxd.com/benfuddled/">Letterboxd</a></li>
-        </ul>
-    </footer>
+    <div class="body-inner">
+        <div class="holder">
+            <h2>🍞 Sheetloaf</h2>
+            <p>
+                Fresh-made stylesheets for the whole family. Compile sass files to
+                CSS and transform using postcss, all in one command.
+            </p>
+            <p>
+                <a href="https://github.com/benfuddled/sheetloaf/">GitHub Repo</a>
+            </p>
+        </div>
+        <div class="holder">
+            <h2>🦊 Contrast++</h2>
+            <p>
+                A theme that re-balances the contrast of Firefox Proton's UI that
+                debuted in v89.
+            </p>
+            <p>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/contrastplusplus/">Get Via Firefox Add-ons</a>
+            </p>
+        </div>
+        <div class="holder">
+            <h2>✨ More To Come?!</h2>
+            <p>Life is busy.</p>
+        </div>
+        <footer>
+            <h2>Find Me On...</h2>
+            <ul>
+                <li><a href="https://github.com/benfuddled/">GitHub</a></li>
+                <li>
+                    <a href="https://fosstodon.org/@benfuddled" rel="me noopener">Mastodon</a>
+                </li>
+                <li>
+                    <a href="https://letterboxd.com/benfuddled/">Letterboxd</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
 </body>
 
 </html>
